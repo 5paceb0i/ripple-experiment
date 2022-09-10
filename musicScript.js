@@ -119,8 +119,13 @@ loop = new Tone.Loop((time) =>{
         if(genMusic[rhthym%16]!=''){
             synth.triggerAttackRelease(genMusic[rhthym%16],'16n',time);
             createRipple();
+            if(noteHitPast){
+                noteHitPast.setAttribute("fill" , "#1D1D1D");
+            }
             noteHit = document.querySelector(`.${genMusic[rhthym%16]}`);
-            noteHit.setAttribute("fill" , "red");
+            noteHitPast = noteHit;
+            let noteColor = noteHit.getAttribute("stroke");
+            noteHit.setAttribute("fill" , noteColor);
             console.log(genMusic[rhthym%16]);
             if(genMusic2[rhthym%16]!=''){
                 //synth.triggerAttackRelease(genMusic2[rhthym%16],'16n',time+0.01);
@@ -131,8 +136,13 @@ loop = new Tone.Loop((time) =>{
         if(genMusic2[rhthym%16]!=''){
             synth.triggerAttackRelease(genMusic2[rhthym%16],'16n',time);
             createRipple();
+            if(noteHitPast){
+                noteHitPast.setAttribute("fill" , "#1D1D1D");
+            }
             noteHit = document.querySelector(`.${genMusic2[rhthym%16]}`);
-            noteHit.setAttribute("fill" , "red");
+            let noteColor = noteHit.getAttribute("stroke");
+            noteHit.setAttribute("fill" , noteColor);
+            noteHitPast = noteHit;
             console.log(genMusic2[rhthym%16]);
         }
     }   
@@ -208,6 +218,24 @@ console.log(genMusic2);
 
 window.addEventListener('keydown',function(e){
     // synth.triggerAttackRelease("C4",0.5);
+    // if(!isPlaying){
+    //     loop.start();
+    //     loopBass.start();
+    //     //loopBg.start();
+    //     Tone.Transport.start();
+    //     isPlaying = !isPlaying;
+    //     // for(let i =0; i<16;i++){
+    //         //synth.triggerAttack(genMusic[2],'16n');
+    //     // }
+    // }
+});
+
+window.addEventListener('keyup',function(e){
+    //synth.triggerRelease();
+    //isPlaying = false;
+});
+
+function startMusic(){
     if(!isPlaying){
         loop.start();
         loopBass.start();
@@ -218,10 +246,5 @@ window.addEventListener('keydown',function(e){
             //synth.triggerAttack(genMusic[2],'16n');
         // }
     }
-});
-
-window.addEventListener('keyup',function(e){
-    //synth.triggerRelease();
-    //isPlaying = false;
-});
+}
 

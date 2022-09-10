@@ -26,7 +26,14 @@ for(let i=0; i < combinedNotesArray.length ; i++){
 const combinedNoteString1  = firstTenNotes.join("");
 const combinedNoteString2  = nextTenNotes.join("");
 
-
-
 list1.innerHTML = combinedNoteString1;
 list2.innerHTML = combinedNoteString2;
+
+function displayMain(){
+    const welcome = document.querySelector(".welcome__wrapper");
+    const mainPage = document.querySelector("main");
+
+    welcome.setAttribute("style", "display:none");
+    mainPage.setAttribute("style", "display:flex; height: calc(100vh - 7rem);");
+    startMusic();
+}
