@@ -6,7 +6,7 @@ canvas.width = visRect.getBoundingClientRect().width-10;
 canvas.height = visRect.getBoundingClientRect().height-8;
 canvas.top = visRect.getBoundingClientRect().top;
 canvas.left = visRect.getBoundingClientRect().left;
-
+console.log(visRect.getBoundingClientRect().width, visRect.getBoundingClientRect().height);
 
 let particleArray = [];
 let rippleArray = [];
@@ -56,6 +56,11 @@ window.addEventListener('keyup',function(){
     counter = 0;
     isMusicPlaying = false;
 });
+
+window.addEventListener('resize', () => {
+    canvas.width = visRect.getBoundingClientRect().width-10;
+    canvas.height = visRect.getBoundingClientRect().height-8;
+})
 
 // function increaseRadius(){
 //     mouse.radius+=10;

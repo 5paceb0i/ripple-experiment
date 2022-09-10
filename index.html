@@ -7,18 +7,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
       rel="stylesheet"
     />
-    <title>Testing karat rahto amhi fakt</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.svg" />
+    <title>r i p p l e</title>
   </head>
   <body>
     <header>
       <section class="logo">
-        <a href="#index.html">
+        <a href="/">
           <svg
             width="186"
             height="21"
@@ -74,7 +76,29 @@
       </section>
     </header>
 
-    <main>
+    <welcome class="welcome__wrapper">
+      <container class="welcome__container">
+        <div class="welcome__heading">~ R I P P L E ~</div>
+        <div class="welcome__text">
+          Hello traveller, rest a bit visualizing and experience the magic of
+          generative music. Ripple creates a musical piece randomness and every
+          time a human or bot (re)loads this website, a new piece of music will
+          be played for them
+        </div>
+        <div class="welcome__text">
+          // Don't get hung up on the music you have found now, there might be a
+          better melody just a few reloads away
+          <span style="color: #f535ee">.</span>
+          <span style="color: #26b1ff">.</span>
+          <span style="color: #12ffd4">.</span>
+        </div>
+        <div class="begin__button">
+          <button onclick="displayMain()">>> begin experience</button>
+        </div>
+      </container>
+    </welcome>
+
+    <main style="display: none">
       <section class="left">
         <div class="notes">
           <div class="notes__container">
