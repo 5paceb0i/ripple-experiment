@@ -3,19 +3,22 @@ const notes2 = ['g#3','b3','c#4','d#4','f#4','g#4','b4','c#5','d#5','f#5','g#5',
 const sampleMusic = ["d#6","b4","f#6","g#4","","d#4","b3","d#6","d#6","b3","","b5","d#5","","g#5",""];
 const sampleChords = ['','','','','','c#6','','','g#3','','g#6','','','','',''];
 const bgNotes = ['g#3','b3', 'c#3', 'd#3', 'f#3','g#2','b2', 'c#2', 'd#2', 'f#2', ];
-const bassNotes = ['d#1','b1','c#1','g#1'];
+const bassNotes = ['c1','d1','f1','g1'];
+const cMinorChords = ["F3min","G3min", "C3min7","F3min7","G3min7","C3sus4"];
+const gMinorPentatonicChords = ["G#3min"];
+const selectedChord = cMinorChords[Math.floor(Math.random()*cMinorChords.length)];
 var rhthym = 0;
 var rhythm2 = 0;
 var rhythm3 = 0;
 var bassCounter = 0;
 var flipper = true;
 var masterVolume = 1;
-notes1 = (Tonal.Scale.get("C4 minor").notes).concat(Tonal.Scale.get("C5 minor").notes);
-var chordNotes = Tonal.Chord.get("F3min").notes;
+notes1 = (Tonal.Scale.get("C4 minor").notes).concat(Tonal.Scale.get("C5 minor").notes, Tonal.Scale.get("C5 minor").notes);
+var chordNotes = Tonal.Chord.get(selectedChord).notes;
 const lowerCased = notes1.map(note => note.toLowerCase());
 let scaleNoteCount = lowerCased.length;
 chordNotes = chordNotes.map(note2 => note2.toLowerCase());
-console.log(chordNotes);
+console.log(selectedChord);
 var genMusic = getRandomNotes(35, lowerCased);
 var genMusic2 = getRandomNotes(60, lowerCased);
 const allNotes = [...new Set([...genMusic, ...genMusic2])].sort();
@@ -127,7 +130,6 @@ loop = new Tone.Loop((time) =>{
             noteHitPast = noteHit;
             let noteColor = noteHit.getAttribute("stroke");
             noteHit.setAttribute("fill" , noteColor);
-            console.log(genMusic[rhthym%scaleNoteCount]);
             if(genMusic2[rhthym%scaleNoteCount]!=''){
                 //synth.triggerAttackRelease(genMusic2[rhthym%16],'16n',time+0.01);
             }
@@ -144,7 +146,6 @@ loop = new Tone.Loop((time) =>{
             let noteColor = noteHit.getAttribute("stroke");
             noteHit.setAttribute("fill" , noteColor);
             noteHitPast = noteHit;
-            console.log(genMusic2[rhthym%scaleNoteCount]);
         }
     }   
 

@@ -17,8 +17,6 @@ let keydownCount = 0;
 let keyUpFlag = 1;
 let originalMouseRadius = 50;
 let isMusicPlaying = false;
-let audio = new Audio('G:/downloads/vF.wav');
-let audio2 = new Audio('');
 var fadeAudio;
 var counter = 0;
 var stepper = 0.1;
@@ -35,10 +33,10 @@ const mouse = {
 }
 
 //event Listener
-window.addEventListener('mousemove', function(event){
-    mouse.x = event.x;
-    mouse.y = event.y;
-});
+// window.addEventListener('mousemove', function(event){
+//     mouse.x = event.x;
+//     mouse.y = event.y;
+// });
 
 window.addEventListener('keydown',function(){
     keydownCount++;

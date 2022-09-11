@@ -4,7 +4,9 @@ const colorArray = ["#26FFB1", "#9226FF", "#F535EE", "#26B1FF", "#FF574D"];
 const svg1 = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect ';
 const svg2 = 'x="0.5" y="0.5" width="15" height="15" rx="7.5" fill="#1D1D1D" stroke=';
 const svg3 = '/></svg>';
-
+const quotesArray = ["All these moments will be lost in time like tears in rain ....","If you are just a dream, I wish I would never wake up ...."];
+let randomQuote = Math.floor(Math.random()*10);
+const quoteSelector = document.querySelector(".quote");
 
 const combinedNotesArray = allNotes.map((element,i) => {
     return `<li> ${svg1} class= ${element} ${svg2} ${colorArray[i%5]} ${svg3} <span> ${element} </span> </li>`;
@@ -65,4 +67,12 @@ function displayMainFromClose(){
     mainPage.setAttribute("style", "");
     close.setAttribute("style", "display:none;");
     about.setAttribute("style", "display:none;");
+}
+
+
+if(randomQuote>5){
+    quoteSelector.innerHTML = quotesArray[1];
+}
+else{
+    quoteSelector.innerHTML = quotesArray[0];
 }
