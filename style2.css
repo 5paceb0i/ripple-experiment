@@ -59,3 +59,81 @@
     border: none;
     cursor:crosshair;
 }
+
+.about>button{
+    border: none;
+    cursor: crosshair;
+}
+
+.about__wrapper{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 7rem);
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__container{
+    display: flex;
+    width: 60%;
+    height: calc(100vh - 7rem);
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__text > a{
+    text-decoration: underline;
+}
+
+.about__heading{
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 83px;
+
+    color: #FFFFFF;
+    margin: 2rem 0;
+
+    text-shadow: 0px 3px 0px #A64DFF, 0px 5px 0px #12FFD4, 0px 7px 0px #FF574D;
+}
+
+.about__images__container{
+    flex-direction: column;
+    height: 26%;
+    margin-top: 4rem;
+}
+
+.images{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: space-around;
+    margin-bottom: 0.5rem;
+}
+
+.image__item{
+    border-radius: 5px;
+}
+
+.image__caption{
+    text-align: center;
+    color: #757575;
+    font-style: italic;
+}
+
+
+.close{
+    display: flex;
+    /* border: 1px solid #484848; */
+    color: white;
+    width: 16%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.close>button{
+    border: none;
+    cursor: crosshair;
+}

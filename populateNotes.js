@@ -32,8 +32,37 @@ list2.innerHTML = combinedNoteString2;
 function displayMain(){
     const welcome = document.querySelector(".welcome__wrapper");
     const mainPage = document.querySelector("main");
+    const aboutButton = document.querySelector(".about");
 
     welcome.setAttribute("style", "display:none");
     mainPage.setAttribute("style", "display:flex; height: calc(100vh - 7rem);");
+    aboutButton.setAttribute("style", "");
     startMusic();
+}
+
+function displayAbout(){
+    const about = document.querySelector("about");
+    const aboutButton = document.querySelector(".about");
+    const welcome = document.querySelector(".welcome__wrapper");
+    const mainPage = document.querySelector("main");
+    const close = document.querySelector(".close");
+
+    about.setAttribute("style", "");
+    close.setAttribute("style", "");
+    aboutButton.setAttribute("style", "display:none;");
+    mainPage.setAttribute("style", "display:none;");
+    welcome.setAttribute("style", "display:none");
+}
+
+function displayMainFromClose(){
+    const about = document.querySelector("about");
+    const aboutButton = document.querySelector(".about");
+    const welcome = document.querySelector(".welcome__wrapper");
+    const mainPage = document.querySelector("main");
+    const close = document.querySelector(".close");
+
+    aboutButton.setAttribute("style", "");
+    mainPage.setAttribute("style", "");
+    close.setAttribute("style", "display:none;");
+    about.setAttribute("style", "display:none;");
 }
