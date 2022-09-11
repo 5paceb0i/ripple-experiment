@@ -9,6 +9,7 @@
     font-size: 16px;
     line-height: 21px;
     color: white;
+    overflow: hidden;
   }
 
   a,

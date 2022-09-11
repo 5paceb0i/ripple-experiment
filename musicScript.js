@@ -10,9 +10,10 @@ var rhythm3 = 0;
 var bassCounter = 0;
 var flipper = true;
 var masterVolume = 1;
-notes1 = (Tonal.Scale.get("C4 minor").notes).concat(Tonal.Scale.get("C5 minor").notes, Tonal.Scale.get("C3 minor").notes);
+notes1 = (Tonal.Scale.get("C4 minor").notes).concat(Tonal.Scale.get("C5 minor").notes);
 var chordNotes = Tonal.Chord.get("F3min").notes;
 const lowerCased = notes1.map(note => note.toLowerCase());
+let scaleNoteCount = lowerCased.length;
 chordNotes = chordNotes.map(note2 => note2.toLowerCase());
 console.log(chordNotes);
 var genMusic = getRandomNotes(35, lowerCased);
@@ -116,34 +117,34 @@ chordSynth.chain(filter2,chorus, reverb3, feedbackDelay, pingPong, Tone.Destinat
 var isPlaying = false;
 loop = new Tone.Loop((time) =>{
     if(flipper == true){
-        if(genMusic[rhthym%16]!=''){
-            synth.triggerAttackRelease(genMusic[rhthym%16],'16n',time);
+        if(genMusic[rhthym%scaleNoteCount]!=''){
+            synth.triggerAttackRelease(genMusic[rhthym%scaleNoteCount],'16n',time);
             createRipple();
             if(noteHitPast){
                 noteHitPast.setAttribute("fill" , "#1D1D1D");
             }
-            noteHit = document.querySelector(`.${genMusic[rhthym%16]}`);
+            noteHit = document.querySelector(`.${genMusic[rhthym%scaleNoteCount]}`);
             noteHitPast = noteHit;
             let noteColor = noteHit.getAttribute("stroke");
             noteHit.setAttribute("fill" , noteColor);
-            console.log(genMusic[rhthym%16]);
-            if(genMusic2[rhthym%16]!=''){
+            console.log(genMusic[rhthym%scaleNoteCount]);
+            if(genMusic2[rhthym%scaleNoteCount]!=''){
                 //synth.triggerAttackRelease(genMusic2[rhthym%16],'16n',time+0.01);
             }
         }
     }
     else{
-        if(genMusic2[rhthym%16]!=''){
-            synth.triggerAttackRelease(genMusic2[rhthym%16],'16n',time);
+        if(genMusic2[rhthym%scaleNoteCount]!=''){
+            synth.triggerAttackRelease(genMusic2[rhthym%scaleNoteCount],'16n',time);
             createRipple();
             if(noteHitPast){
                 noteHitPast.setAttribute("fill" , "#1D1D1D");
             }
-            noteHit = document.querySelector(`.${genMusic2[rhthym%16]}`);
+            noteHit = document.querySelector(`.${genMusic2[rhthym%scaleNoteCount]}`);
             let noteColor = noteHit.getAttribute("stroke");
             noteHit.setAttribute("fill" , noteColor);
             noteHitPast = noteHit;
-            console.log(genMusic2[rhthym%16]);
+            console.log(genMusic2[rhthym%scaleNoteCount]);
         }
     }   
 
@@ -237,6 +238,7 @@ window.addEventListener('keyup',function(e){
 
 function startMusic(){
     if(!isPlaying){
+        playAnim = true;
         loop.start();
         loopBass.start();
         //loopBg.start();
