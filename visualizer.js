@@ -244,7 +244,7 @@ function animate(){
     requestAnimationFrame(animate);
 }
 
-animate();
+//animate();
 
 function connect(){
     let opacityValue = 1;
@@ -295,3 +295,5 @@ function createRipple(){
     ];
 
 }
+
+console.log('testing load');
