@@ -6,8 +6,8 @@
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 1rem;
+    line-height: 1.3125rem;
     color: white;
     overflow: hidden;
   }
@@ -133,6 +133,7 @@
     color: white;
     text-align: left;
     margin-top: 1rem;
+    text-decoration: underline;
   }
   
   .center{
