@@ -34,7 +34,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-        line-height: 1.3125rem;
+    line-height: 1.3125rem;
     letter-spacing: 0.195em;
     width: 80%;
 }
@@ -75,7 +75,7 @@
 
 .about__container{
     display: flex;
-    width: 60%;
+    width: 75%;
     height: calc(100vh - 7rem);
     flex-direction: column;
     align-items: center;
@@ -89,8 +89,8 @@
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
-    line-height: 83px;
+    font-size: 4rem;
+    line-height: 5.1875rem;
 
     color: #FFFFFF;
     margin: 2rem 0;
@@ -116,6 +116,11 @@
     border-radius: 5px;
 }
 
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .image__caption{
     text-align: center;
     color: #757575;
@@ -136,4 +141,60 @@
 .close>button{
     border: none;
     cursor: crosshair;
+}
+
+@media only screen and (max-width: 1616px) {
+    header {
+        height: 6rem;
+    }
+
+    .welcome__wrapper {
+        height: calc(100vh - 6rem) !important;
+    }
+
+    main {
+        height: calc(100vh - 6rem) !important;
+    }
+
+    .notes {
+        padding-top: 4rem;
+    }
+
+    ul>li {
+        margin: 1.2rem 0;
+        vertical-align: middle;
+    }
+    
+    .notes-unordered__list2 {
+        margin-left: 4rem;
+    }
+
+    .quote__wrapper {
+        height: 70%;
+    }
+
+    .logo{
+        min-width: max-content;
+        margin-left: 1rem;
+    }
+
+    *{
+        font-size: 12px;
+    }
+
+    .about__container{
+        width: 75%;
+    }
+
+    .about__heading {
+        font-size: 3rem;
+        line-height: 4.1875rem;
+        margin: 1rem 0;
+    }
+
+    .about__images__container {
+        height: 20%;
+        margin-top: 2rem;
+        width: 80%;
+    }
 }
